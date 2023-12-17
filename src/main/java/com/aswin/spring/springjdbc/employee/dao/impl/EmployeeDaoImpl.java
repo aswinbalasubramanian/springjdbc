@@ -1,8 +1,10 @@
 package com.aswin.spring.springjdbc.employee.dao.impl;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 import com.aswin.spring.springjdbc.employee.dao.EmployeeDao;
+import com.aswin.spring.springjdbc.employee.dao.rowmapper.EmployeeRowMapper;
 import com.aswin.spring.springjdbc.employee.dto.Employee;
 
 public class EmployeeDaoImpl implements EmployeeDao {
@@ -36,8 +38,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Override
 	public Employee read(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "Select * from employee where id=?";
+		EmployeeRowMapper rowMapper = new EmployeeRowMapper();
+		Employee employee = jdbcTemplate.queryForObject(sql, rowMapper, id);
+		return employee;
 	}
 
 	public JdbcTemplate getJdbcTemplate() {

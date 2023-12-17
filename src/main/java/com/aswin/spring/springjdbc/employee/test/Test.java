@@ -16,10 +16,11 @@ public class Test {
 		employee.setId(2);
 		employee.setFirstName("Antony");
 		employee.setLastName("Ginting");
-		//int result = employeeDao.create(employee);
-		//int result = employeeDao.update(employee);
-		int result = employeeDao.delete(2);
-		System.out.println("Number of records inderted :" + result);
+		// int result = employeeDao.create(employee);
+		// int result = employeeDao.update(employee);
+		// int result = employeeDao.delete(2);
+		Employee record = employeeDao.read(1);
+		System.out.println("Employee with id 1 :" + record);
 	}
 
 }
