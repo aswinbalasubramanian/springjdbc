@@ -25,13 +25,19 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		int result = jdbcTemplate.update(sql, employee.getFirstName(), employee.getLastName(), employee.getId());
 		return result;
 	}
-	
+
 	@Override
 	public int delete(int id) {
 
 		String sql = "delete from employee where id=?";
-		int result = jdbcTemplate.update(sql,id);
+		int result = jdbcTemplate.update(sql, id);
 		return result;
+	}
+
+	@Override
+	public Employee read(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public JdbcTemplate getJdbcTemplate() {
