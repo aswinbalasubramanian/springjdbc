@@ -14,10 +14,11 @@ public class Test {
 		EmployeeDao employeeDao = (EmployeeDao) context.getBean("employeeDao");
 		Employee employee = new Employee();
 		employee.setId(2);
-		employee.setFirstName("Sinusuka");
+		employee.setFirstName("Antony");
 		employee.setLastName("Ginting");
-		
-		int result = employeeDao.create(employee);
+		//int result = employeeDao.create(employee);
+		//int result = employeeDao.update(employee);
+		int result = employeeDao.delete(2);
 		System.out.println("Number of records inderted :" + result);
 	}
 
